@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHub | Subjects</title>
+
+    <link rel="stylesheet" href="css/subjects.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<aside class="sidebar">
+    <div class="sidebar-brand">
+        <a href="dashboard.html" class="brand-link">
+            <span class="brand-icon"><i class="fa-solid fa-book-open"></i></span>
+            <span class="brand-name">StudyHub</span>
+        </a>
+    </div>
+
+    <nav class="sidebar-nav">
+        <div class="nav-group">
+            <span class="nav-label">Workspace</span>
+
+            <a href="dashboard.html" class="nav-link">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="subjects.html" class="nav-link active">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Subjects</span>
+            </a>
+
+            <a href="teachers.html" class="nav-link">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <span>Teachers</span>
+            </a>
+
+            <a href="notes.html" class="nav-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Notes Library</span>
+            </a>
+
+            <a href="upload.html" class="nav-link">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>Upload Notes</span>
+            </a>
+
+            <a href="profile.html" class="nav-link">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="about.html" class="nav-link">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </a>
+
+            <a href="contact.html" class="nav-link">
+                <i class="fa-solid fa-headset"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="sidebar-help">
+            <div class="help-icon"><i class="fa-solid fa-circle-question"></i></div>
+            <div>
+                <strong>Need help?</strong>
+                <span>Visit Support</span>
+            </div>
+        </div>
+
+        <a href="#" class="nav-link logout-link" onclick="logoutUser(); return false;">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+</aside>
+
+<main class="dashboard">
+
+    <header class="topbar">
+        <div class="topbar-left">
+            <span class="eyebrow">STUDY RESOURCE CENTER</span>
+            <h1>Subjects</h1>
+            <p>Explore subjects, find useful resources and jump directly to related notes.</p>
+        </div>
+
+        <div class="topbar-right">
+            <a href="notes.html" class="topbar-action">
+                <i class="fa-solid fa-book-open"></i>
+                Notes Library
+            </a>
+
+            <div class="user-chip">
+                <img src="assets/images/avatar.png" alt="Profile" class="user-avatar">
+                <div class="user-info">
+                    <strong id="username">Student</strong>
+                    <span>StudyHub Member</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-card">
+        <div class="hero-content">
+            <span class="hero-badge">
+                <i class="fa-solid fa-layer-group"></i>
+                Academic Subjects
+            </span>
+
+            <h2>Find the right subject for your next study session.</h2>
+
+            <p>
+                Browse subjects by department and semester, check available resources,
+                and open the Notes Library with one click.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#subjects" class="btn btn-primary">
+                    <i class="fa-solid fa-compass"></i>
+                    Explore Subjects
+                </a>
+
+                <a href="notes.html" class="btn btn-light">
+                    <i class="fa-solid fa-book-open"></i>
+                    Browse Notes
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-orb orb-one"></div>
+            <div class="hero-orb orb-two"></div>
+
+            <div class="subject-visual">
+                <div class="visual-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <strong>Learn</strong>
+                <span>Organize • Explore • Share</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-grid">
+        <article class="stat-card">
+            <div class="stat-icon blue"><i class="fa-solid fa-layer-group"></i></div>
+            <div>
+                <strong id="totalSubjects">0</strong>
+                <span>Subjects</span>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon purple"><i class="fa-solid fa-book-open"></i></div>
+            <div>
+                <strong id="totalResources">0</strong>
+                <span>Resources</span>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon amber"><i class="fa-solid fa-building-columns"></i></div>
+            <div>
+                <strong id="totalDepartments">0</strong>
+                <span>Departments</span>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon green"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+                <strong id="totalSemesters">6</strong>
+                <span>Semesters</span>
+            </div>
+        </article>
+    </section>
+
+    <section class="dashboard-section" id="subjects">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">EXPLORE</span>
+                <h2>Browse subjects</h2>
+                <p>Search by subject name or narrow the list using department and semester.</p>
+            </div>
+        </div>
+
+        <div class="search-panel">
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="subjectSearch"
+                       type="text"
+                       placeholder="Search subjects..."
+                       autocomplete="off">
+            </div>
+
+            <select id="departmentFilter" aria-label="Department">
+                <option value="">All Departments</option>
+                <option value="CSE">CSE</option>
+                <option value="ISE">ISE</option>
+                <option value="AIML">AIML</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil</option>
+            </select>
+
+            <select id="semesterFilter" aria-label="Semester">
+                <option value="">All Semesters</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+            </select>
+
+            <button type="button" id="clearFilters" class="btn btn-outline">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset
+            </button>
+        </div>
+
+        <div class="filter-status">
+            <span>
+                <i class="fa-solid fa-filter"></i>
+                <strong id="resultCount">0</strong> subjects found
+            </span>
+
+            <button type="button" id="refreshSubjects" class="refresh-btn">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                Refresh
+            </button>
+        </div>
+
+        <div id="subjectsGrid" class="subjects-grid"></div>
+
+        <div id="emptyState" class="empty-state hidden">
+            <div class="empty-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <h3>No subjects found</h3>
+            <p>Try another keyword or reset the filters.</p>
+            <button type="button" class="btn btn-primary" id="emptyReset">
+                Reset Filters
+            </button>
+        </div>
+    </section>
+
+    <section class="dashboard-section quick-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">STUDY SMART</span>
+                <h2>Make the most of your subjects</h2>
+                <p>A simple workflow for using StudyHub effectively.</p>
+            </div>
+        </div>
+
+        <div class="workflow-grid">
+            <article class="workflow-card">
+                <div class="workflow-number">01</div>
+                <div class="workflow-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <h3>Find</h3>
+                <p>Search for the subject you need using the filters.</p>
+            </article>
+
+            <article class="workflow-card">
+                <div class="workflow-number">02</div>
+                <div class="workflow-icon"><i class="fa-solid fa-book-open"></i></div>
+                <h3>Study</h3>
+                <p>Open related notes and use them for revision.</p>
+            </article>
+
+            <article class="workflow-card">
+                <div class="workflow-number">03</div>
+                <div class="workflow-icon"><i class="fa-solid fa-bookmark"></i></div>
+                <h3>Save</h3>
+                <p>Bookmark important resources for quick access later.</p>
+            </article>
+
+            <article class="workflow-card">
+                <div class="workflow-number">04</div>
+                <div class="workflow-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                <h3>Share</h3>
+                <p>Upload useful notes and help other students learn.</p>
+            </article>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div>
+            <strong>StudyHub</strong>
+            <span>Student notes, organized for easier learning.</span>
+        </div>
+
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="notes.html">Notes</a>
+        </div>
+    </footer>
+
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/subjects.js"></script>
+
+</body>
+</html>

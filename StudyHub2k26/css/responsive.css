@@ -1,0 +1,503 @@
+/* ==========================================================
+   StudyHub
+   responsive.css
+   Responsive Design For All Devices
+========================================================== */
+
+
+/* ==========================================================
+   Large Tablets & Small Laptops
+   Below 1200px
+========================================================== */
+
+@media(max-width:1200px){
+
+
+    /* Dashboard */
+
+    .dashboard{
+
+        margin-left:220px;
+
+        padding:25px;
+
+    }
+
+
+    .stats-grid,
+    .analytics{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .notes-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .quick-actions{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    .settings-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+    #bookmarkList{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+/* ==========================================================
+   Tablets
+   Below 992px
+========================================================== */
+
+@media(max-width:992px){
+
+
+    /* Sidebar */
+
+    .sidebar{
+
+        width:80px;
+
+        padding:20px 10px;
+
+    }
+
+
+    .sidebar .logo h2{
+
+        display:none;
+
+    }
+
+
+    .sidebar ul li a{
+
+        justify-content:center;
+
+    }
+
+
+    .sidebar ul li a{
+
+        font-size:0;
+
+    }
+
+
+    .sidebar ul li a i{
+
+        font-size:22px;
+
+    }
+
+
+
+    /* Dashboard */
+
+    .dashboard{
+
+        margin-left:80px;
+
+        padding:20px;
+
+    }
+
+
+    .dashboard-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+
+    /* Profile */
+
+    .profile-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+
+    #profileForm{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    /* Upload */
+
+    .upload-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .file-types{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+
+}
+
+
+
+/* ==========================================================
+   Mobile Devices
+   Below 768px
+========================================================== */
+
+@media(max-width:768px){
+
+
+    body{
+
+        overflow-x:hidden;
+
+    }
+
+
+
+    /* Sidebar */
+
+    .sidebar{
+
+        position:fixed;
+
+        bottom:0;
+
+        top:auto;
+
+        width:100%;
+
+        height:70px;
+
+        display:flex;
+
+        justify-content:center;
+
+        padding:0;
+
+    }
+
+
+    .sidebar .logo{
+
+        display:none;
+
+    }
+
+
+    .sidebar ul{
+
+        display:flex;
+
+        width:100%;
+
+        justify-content:space-around;
+
+        align-items:center;
+
+    }
+
+
+    .sidebar ul li{
+
+        margin:0;
+
+    }
+
+
+    .sidebar ul li a{
+
+        padding:10px;
+
+    }
+
+
+
+    /* Dashboard */
+
+    .dashboard{
+
+        margin-left:0;
+
+        padding:15px;
+
+        padding-bottom:90px;
+
+    }
+
+
+
+    .dashboard-header h1{
+
+        font-size:26px;
+
+    }
+
+
+
+    /* Cards */
+
+    .stats-grid,
+    .analytics,
+    .notes-grid,
+    .quick-actions,
+    .settings-grid,
+    #bookmarkList{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    /* Search */
+
+    .search-section{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .filter-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    /* Tables */
+
+    table{
+
+        min-width:650px;
+
+    }
+
+
+    .table-container{
+
+        overflow-x:auto;
+
+    }
+
+
+
+    /* Profile */
+
+    .profile-image img{
+
+        width:120px;
+
+        height:120px;
+
+    }
+
+
+
+    .profile-details h2{
+
+        font-size:24px;
+
+    }
+
+
+
+    /* Upload */
+
+    .upload-card{
+
+        padding:20px;
+
+    }
+
+
+
+    .file-types{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    /* Login */
+
+    .auth-card{
+
+        padding:25px;
+
+    }
+
+
+    .signup-extra{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+}
+
+
+
+/* ==========================================================
+   Small Mobile Devices
+   Below 480px
+========================================================== */
+
+@media(max-width:480px){
+
+
+    /* Dashboard */
+
+    .dashboard{
+
+        padding:10px;
+
+    }
+
+
+    .dashboard-section{
+
+        padding:18px;
+
+    }
+
+
+
+    .dashboard-header h1{
+
+        font-size:22px;
+
+    }
+
+
+
+    /* Buttons */
+
+    .btn{
+
+        width:100%;
+
+    }
+
+
+    .note-actions{
+
+        flex-direction:column;
+
+    }
+
+
+
+    /* Sidebar Icons */
+
+    .sidebar ul li a i{
+
+        font-size:18px;
+
+    }
+
+
+
+    /* Authentication */
+
+    .auth-container{
+
+        width:100%;
+
+    }
+
+
+    .auth-card{
+
+        padding:20px;
+
+    }
+
+
+
+    .auth-card h2{
+
+        font-size:22px;
+
+    }
+
+
+
+    /* Upload */
+
+    .file-upload-area{
+
+        padding:25px 10px;
+
+    }
+
+
+    .file-upload-area i{
+
+        font-size:35px;
+
+    }
+
+
+
+    /* Profile */
+
+    .profile-card{
+
+        padding:20px;
+
+    }
+
+
+
+    .profile-actions{
+
+        flex-direction:column;
+
+    }
+
+
+
+}

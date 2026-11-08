@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teachers | StudyHub</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <!-- Teachers CSS -->
+    <link rel="stylesheet" href="css/teachers.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="brand-text">
+                    <h2>StudyHub</h2>
+                    <span>Student Learning Portal</span>
+                </div>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-label">Workspace</p>
+
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="subjects.html" class="nav-link">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a href="teachers.html" class="nav-link active">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <span>Teachers</span>
+                </a>
+
+                <a href="notes.html" class="nav-link">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Notes Library</span>
+                </a>
+
+                <a href="upload.html" class="nav-link">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Upload Notes</span>
+                </a>
+
+
+                <p class="nav-label">Account</p>
+
+                <a href="profile.html" class="nav-link">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>About StudyHub</span>
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-help">
+                    <div class="help-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <div>
+                        <strong>Need Help?</strong>
+                        <span>Contact StudyHub</span>
+                    </div>
+                </div>
+
+                <button class="logout-btn" onclick="logoutUser()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+                <div class="topbar-title">
+                    <span>StudyHub</span>
+                    <h1>Teachers</h1>
+                </div>
+
+
+                <div class="topbar-actions">
+
+                    <button class="icon-btn" title="Notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="user-mini">
+
+                        <div class="user-avatar" id="userAvatar">
+                            U
+                        </div>
+
+                        <div class="user-info">
+                            <strong id="username">Student</strong>
+                            <span>Student</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= HERO ================= -->
+            <section class="teachers-hero">
+
+                <div class="hero-content">
+
+                    <div class="hero-icon">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+
+                    <div>
+                        <span class="hero-label">MEET OUR FACULTY</span>
+
+                        <h2>
+                            Learn from experienced
+                            <span>teachers</span>
+                        </h2>
+
+                        <p>
+                            Explore faculty members, their departments,
+                            subjects and areas of expertise.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-decoration">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+            </section>
+
+
+            <!-- ================= STATS ================= -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Teachers</span>
+                        <strong id="totalTeachers">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+
+                    <div>
+                        <span>Departments</span>
+                        <strong id="totalDepartments">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div>
+                        <span>Subjects Covered</span>
+                        <strong id="totalSubjects">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+
+                    <div>
+                        <span>Experienced Faculty</span>
+                        <strong id="experiencedTeachers">0</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SEARCH / FILTER ================= -->
+            <section class="filter-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">FACULTY DIRECTORY</span>
+                        <h2>Find your teacher</h2>
+                    </div>
+
+                    <span class="result-count" id="resultCount">
+                        0 teachers
+                    </span>
+
+                </div>
+
+
+                <div class="filter-bar">
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="teacherSearch"
+                            placeholder="Search by teacher, subject or department..."
+                        >
+
+                    </div>
+
+
+                    <div class="select-wrapper">
+
+                        <i class="fa-solid fa-building"></i>
+
+                        <select id="departmentFilter">
+
+                            <option value="all">
+                                All Departments
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        class="reset-btn"
+                        id="resetFilters"
+                        title="Reset filters"
+                    >
+                        <i class="fa-solid fa-rotate-right"></i>
+                        Reset
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= TEACHERS ================= -->
+            <section class="teachers-section">
+
+                <div
+                    class="teachers-grid"
+                    id="teachersGrid"
+                >
+                    <!-- Teachers loaded by JavaScript -->
+                </div>
+
+
+                <!-- Empty State -->
+                <div
+                    class="empty-state"
+                    id="emptyState"
+                    style="display: none;"
+                >
+
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-user-slash"></i>
+                    </div>
+
+                    <h3>No teachers found</h3>
+
+                    <p>
+                        Try changing your search or department filter.
+                    </p>
+
+                    <button
+                        class="empty-reset"
+                        onclick="resetTeacherFilters()"
+                    >
+                        Reset Filters
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= INFO SECTION ================= -->
+            <section class="faculty-info">
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <div>
+
+                        <span class="info-label">
+                            LEARNING TIP
+                        </span>
+
+                        <h3>
+                            Connect with your teachers
+                        </h3>
+
+                        <p>
+                            Use the teacher directory to discover the
+                            subjects they handle and find the right
+                            learning resources in StudyHub.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        <i class="fa-solid fa-file-circle-question"></i>
+                    </div>
+
+                    <div>
+
+                        <span class="info-label">
+                            NEED NOTES?
+                        </span>
+
+                        <h3>
+                            Explore the Notes Library
+                        </h3>
+
+                        <p>
+                            Find notes and study materials uploaded
+                            by teachers and students.
+                        </p>
+
+                        <a href="notes.html" class="info-link">
+                            Explore Notes
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= FOOTER ================= -->
+            <footer class="footer">
+
+                <div>
+                    <strong>StudyHub</strong>
+                    <span>
+                        Your digital learning companion.
+                    </span>
+                </div>
+
+                <div class="footer-links">
+
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy.html">Privacy</a>
+
+                </div>
+
+                <p>
+                    © 2026 StudyHub. All rights reserved.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- Teachers JavaScript -->
+    <script src="js/teachers.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>About StudyHub</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <!-- About CSS -->
+    <link
+        rel="stylesheet"
+        href="css/about.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+        <!-- BRAND -->
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div class="brand-text">
+
+                <h2>StudyHub</h2>
+
+                <span>
+                    Student Learning Portal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-label">
+                Workspace
+            </p>
+
+
+            <a
+                href="dashboard.html"
+                class="nav-link"
+            >
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="subjects.html"
+                class="nav-link"
+            >
+                <i class="fa-solid fa-book-open"></i>
+                <span>Subjects</span>
+            </a>
+
+
+            <a
+                href="teachers.html"
+                class="nav-link"
+            >
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <span>Teachers</span>
+            </a>
+
+
+            <a
+                href="notes.html"
+                class="nav-link"
+            >
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Notes Library</span>
+            </a>
+
+
+            <a
+                href="upload.html"
+                class="nav-link"
+            >
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>Upload Notes</span>
+            </a>
+
+
+            <p class="nav-label">
+                Account
+            </p>
+
+
+            <a
+                href="profile.html"
+                class="nav-link"
+            >
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+
+            <a
+                href="about.html"
+                class="nav-link active"
+            >
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About StudyHub</span>
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="nav-link"
+            >
+                <i class="fa-solid fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+
+            <div class="sidebar-help">
+
+                <div class="help-icon">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Need Help?
+                    </strong>
+
+                    <span>
+                        Contact StudyHub
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="logout-btn"
+                onclick="logoutUser()"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="topbar-title">
+
+                    <span>
+                        StudyHub
+                    </span>
+
+                    <h1>
+                        About
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <button
+                    class="icon-btn"
+                    title="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="user-mini">
+
+
+                    <div
+                        class="user-avatar"
+                        id="userAvatar"
+                    >
+                        U
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <strong id="username">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
+
+        <section class="about-hero">
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span class="hero-label">
+                        ABOUT STUDYHUB
+                    </span>
+
+
+                    <h2>
+
+                        Learn.
+                        <span>
+                            Share.
+                        </span>
+                        Grow.
+
+                    </h2>
+
+
+                    <p>
+
+                        StudyHub is a digital learning platform
+                        designed to make academic notes,
+                        subjects and learning resources easier
+                        to access and share.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-decoration">
+
+                <i class="fa-solid fa-book-open-reader"></i>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INTRODUCTION
+             ================================================= -->
+
+        <section class="intro-section">
+
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    OUR STORY
+                </span>
+
+                <h2>
+                    What is StudyHub?
+                </h2>
+
+            </div>
+
+
+            <div class="intro-grid">
+
+
+                <div class="intro-content">
+
+                    <p>
+
+                        StudyHub is a student-focused digital
+                        notes and learning resource platform.
+                        It provides a centralized place where
+                        students can discover, access and organize
+                        academic study materials.
+
+                    </p>
+
+
+                    <p>
+
+                        Instead of searching through multiple
+                        messaging groups, devices and folders,
+                        StudyHub brings useful learning resources
+                        together in one organized platform.
+
+                    </p>
+
+
+                    <p>
+
+                        Teachers and students can contribute
+                        educational materials, helping create a
+                        collaborative learning environment.
+
+                    </p>
+
+                </div>
+
+
+                <div class="intro-highlight">
+
+
+                    <div class="highlight-icon">
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                    </div>
+
+
+                    <span>
+                        OUR IDEA
+                    </span>
+
+
+                    <h3>
+                        One place for
+                        better learning.
+                    </h3>
+
+
+                    <p>
+
+                        Simple, organized and accessible
+                        learning resources for students
+                        and teachers.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MISSION / VISION
+             ================================================= -->
+
+        <section class="mission-grid">
+
+
+            <div class="mission-card">
+
+                <div class="mission-icon">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                </div>
+
+
+                <span class="card-label">
+                    OUR MISSION
+                </span>
+
+
+                <h3>
+                    Make learning resources accessible.
+                </h3>
+
+
+                <p>
+
+                    Our mission is to provide students with
+                    an organized and easy-to-use platform
+                    for accessing and sharing academic
+                    resources.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="mission-card">
+
+                <div class="mission-icon">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                </div>
+
+
+                <span class="card-label">
+                    OUR VISION
+                </span>
+
+
+                <h3>
+                    Build a collaborative learning community.
+                </h3>
+
+
+                <p>
+
+                    We aim to create a digital environment
+                    where students and teachers can share
+                    knowledge and support each other's
+                    academic journey.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FEATURES
+             ================================================= -->
+
+        <section class="features-section">
+
+
+            <div class="section-heading centered">
+
+                <span class="section-label">
+                    PLATFORM FEATURES
+                </span>
+
+                <h2>
+                    Everything you need to study smarter
+                </h2>
+
+                <p>
+
+                    StudyHub brings important academic
+                    resources together in one place.
+
+                </p>
+
+            </div>
+
+
+            <div class="features-grid">
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon blue">
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Subject Resources
+                    </h3>
+
+
+                    <p>
+
+                        Browse subjects and discover
+                        related notes and study materials.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon purple">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Notes Library
+                    </h3>
+
+
+                    <p>
+
+                        Find academic notes and learning
+                        materials through an organized library.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon green">
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Upload Resources
+                    </h3>
+
+
+                    <p>
+
+                        Share useful notes and learning
+                        materials with the StudyHub community.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon orange">
+
+                        <i class="fa-solid fa-chalkboard-user"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Teacher Directory
+                    </h3>
+
+
+                    <p>
+
+                        Explore teachers, departments,
+                        subjects and areas of expertise.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon red">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Quick Search
+                    </h3>
+
+
+                    <p>
+
+                        Quickly search for notes, subjects
+                        and learning resources.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon cyan">
+
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Easy Access
+                    </h3>
+
+
+                    <p>
+
+                        Access your learning resources through
+                        a clean and responsive interface.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HOW IT WORKS
+             ================================================= -->
+
+        <section class="workflow-section">
+
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    HOW IT WORKS
+                </span>
+
+                <h2>
+                    Learning with StudyHub is simple
+                </h2>
+
+            </div>
+
+
+            <div class="workflow-grid">
+
+
+                <div class="workflow-card">
+
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+
+                    <div class="workflow-icon">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Create your account
+                    </h3>
+
+
+                    <p>
+
+                        Sign up and create your StudyHub
+                        student profile.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="workflow-card">
+
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+
+                    <div class="workflow-icon">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Find resources
+                    </h3>
+
+
+                    <p>
+
+                        Search subjects, teachers and
+                        academic notes.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="workflow-card">
+
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+
+                    <div class="workflow-icon">
+
+                        <i class="fa-solid fa-download"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Study & learn
+                    </h3>
+
+
+                    <p>
+
+                        Access useful resources and use
+                        them for your academic preparation.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="workflow-card">
+
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+
+                    <div class="workflow-icon">
+
+                        <i class="fa-solid fa-share-nodes"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Share knowledge
+                    </h3>
+
+
+                    <p>
+
+                        Upload useful study materials and
+                        help other students learn.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STATS
+             ================================================= -->
+
+        <section class="about-stats">
+
+
+            <div class="about-stat">
+
+                <div class="about-stat-icon">
+
+                    <i class="fa-solid fa-book"></i>
+
+                </div>
+
+                <strong id="aboutNotes">
+                    0
+                </strong>
+
+                <span>
+                    Study Resources
+                </span>
+
+            </div>
+
+
+
+            <div class="about-stat">
+
+                <div class="about-stat-icon">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                </div>
+
+                <strong id="aboutSubjects">
+                    0
+                </strong>
+
+                <span>
+                    Subjects
+                </span>
+
+            </div>
+
+
+
+            <div class="about-stat">
+
+                <div class="about-stat-icon">
+
+                    <i class="fa-solid fa-chalkboard-user"></i>
+
+                </div>
+
+                <strong id="aboutTeachers">
+                    0
+                </strong>
+
+                <span>
+                    Teachers
+                </span>
+
+            </div>
+
+
+
+            <div class="about-stat">
+
+                <div class="about-stat-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <strong id="aboutUsers">
+                    0
+                </strong>
+
+                <span>
+                    Learners
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+             ================================================= -->
+
+        <section class="about-cta">
+
+
+            <div class="cta-icon">
+
+                <i class="fa-solid fa-rocket"></i>
+
+            </div>
+
+
+            <div class="cta-content">
+
+                <span>
+                    READY TO START?
+                </span>
+
+                <h2>
+                    Start exploring StudyHub today.
+                </h2>
+
+                <p>
+
+                    Discover subjects, find notes and
+                    make your learning journey more organized.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="notes.html"
+                class="cta-button"
+            >
+
+                Explore Notes
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="footer">
+
+
+            <div>
+
+                <strong>
+                    StudyHub
+                </strong>
+
+                <span>
+                    Your digital learning companion.
+                </span>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+            </div>
+
+
+            <p>
+                © 2026 StudyHub. All rights reserved.
+            </p>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<!-- About JavaScript -->
+<script src="js/about.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudyHub Upload Notes - Share educational resources with students.">
+    <title>StudyHub | Upload Notes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/upload.css">
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+        <a href="dashboard.html" class="brand-link">
+            <span class="brand-icon"><i class="fa-solid fa-book-open"></i></span>
+            <span>
+                <strong>StudyHub</strong>
+                <small>Learning made simple</small>
+            </span>
+        </a>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Main navigation">
+        <div class="nav-group">
+            <p class="nav-label">MAIN MENU</p>
+            <a href="dashboard.html" class="nav-link">
+                <i class="fa-solid fa-grid-2"></i><span>Dashboard</span>
+            </a>
+            <a href="upload.html" class="nav-link active">
+                <i class="fa-solid fa-cloud-arrow-up"></i><span>Upload Notes</span>
+            </a>
+            <a href="notes.html" class="nav-link">
+                <i class="fa-solid fa-book-open-reader"></i><span>Browse Notes</span>
+            </a>
+            <a href="profile.html" class="nav-link">
+                <i class="fa-solid fa-user"></i><span>Profile</span>
+            </a>
+            <a href="contact.html" class="nav-link">
+                <i class="fa-solid fa-headset"></i><span>Contact &amp; Help</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="sidebar-help">
+            <div class="help-icon"><i class="fa-solid fa-circle-question"></i></div>
+            <div>
+                <strong>Need help?</strong>
+                <span>We're here for you.</span>
+            </div>
+        </div>
+        <a href="login.html" class="logout-link" onclick="logoutUser(); return false;">
+            <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+        </a>
+    </div>
+</aside>
+
+<main class="page-shell">
+    <header class="topbar">
+        <div class="mobile-brand">
+            <span class="mobile-brand-icon"><i class="fa-solid fa-book-open"></i></span>
+            <strong>StudyHub</strong>
+        </div>
+
+        <div class="topbar-heading">
+            <span class="eyebrow"><i class="fa-solid fa-cloud-arrow-up"></i> Resource sharing</span>
+            <h1>Upload Notes</h1>
+            <p>Share useful study materials with your classmates and help everyone learn better.</p>
+        </div>
+
+        <div class="profile-chip">
+            <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="profile-copy">
+                <span class="profile-label">Signed in as</span>
+                <strong id="username">Teacher</strong>
+            </div>
+            <i class="fa-solid fa-chevron-down profile-chevron"></i>
+        </div>
+    </header>
+
+    <section class="upload-hero">
+        <div class="hero-copy">
+            <span class="hero-badge"><i class="fa-solid fa-sparkles"></i> Share knowledge</span>
+            <h2>Turn your notes into a resource <span>everyone can use.</span></h2>
+            <p>Upload well-organized notes, presentations, and documents. Add the right subject, department, and semester so students can find them quickly.</p>
+            <div class="hero-points">
+                <span><i class="fa-solid fa-circle-check"></i> Easy to find</span>
+                <span><i class="fa-solid fa-circle-check"></i> Student friendly</span>
+                <span><i class="fa-solid fa-circle-check"></i> Up to 20 MB</span>
+            </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+            <div class="hero-document"><i class="fa-solid fa-file-arrow-up"></i><span>UPLOAD</span></div>
+            <span class="floating-icon icon-one"><i class="fa-solid fa-file-pdf"></i></span>
+            <span class="floating-icon icon-two"><i class="fa-solid fa-file-powerpoint"></i></span>
+            <span class="floating-icon icon-three"><i class="fa-solid fa-file-word"></i></span>
+        </div>
+    </section>
+
+    <section class="content-grid">
+        <div class="form-card">
+            <div class="card-heading">
+                <div>
+                    <span class="section-kicker">NEW RESOURCE</span>
+                    <h2>Upload a study note</h2>
+                    <p>Complete the details below before selecting your file.</p>
+                </div>
+                <span class="heading-icon"><i class="fa-solid fa-pen-to-square"></i></span>
+            </div>
+
+            <form id="uploadForm" class="upload-form">
+                <div class="form-grid">
+                    <div class="input-group full-width">
+                        <label for="title">Note title <span>*</span></label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-heading"></i>
+                            <input type="text" id="title" placeholder="Example: Java Unit 1 Notes" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="subject">Subject <span>*</span></label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-book"></i>
+                            <input type="text" id="subject" placeholder="Example: Java Programming" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="department">Department <span>*</span></label>
+                        <div class="input-wrap select-wrap">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <select id="department" required>
+                                <option value="">Select department</option>
+                                <option>CSE</option>
+                                <option>ISE</option>
+                                <option>AIML</option>
+                                <option>ECE</option>
+                                <option>EEE</option>
+                                <option>Mechanical</option>
+                                <option>Civil</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="semester">Semester <span>*</span></label>
+                        <div class="input-wrap select-wrap">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <select id="semester" required>
+                                <option value="">Choose semester</option>
+                                <option>1</option><option>2</option><option>3</option><option>4</option>
+                                <option>5</option><option>6</option><option>7</option><option>8</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="description">Description <span>*</span></label>
+                        <div class="input-wrap textarea-wrap">
+                            <i class="fa-solid fa-align-left"></i>
+                            <textarea id="description" rows="5" placeholder="Write a short description of what students will find in these notes..." required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="file-section">
+                    <div class="file-heading">
+                        <div>
+                            <label for="noteFile">Study material <span>*</span></label>
+                            <p>PDF, DOC, DOCX, PPT or PPTX · Maximum 20 MB</p>
+                        </div>
+                        <i class="fa-solid fa-paperclip"></i>
+                    </div>
+
+                    <div class="file-picker">
+                        <input type="file" id="noteFile" accept=".pdf,.doc,.docx,.ppt,.pptx" required>
+                        <label for="noteFile" class="file-picker-label">
+                            <span class="upload-cloud"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                            <strong>Choose a file</strong>
+                            <span>or drag and drop it here</span>
+                            <small>Supported: PDF, DOC, DOCX, PPT, PPTX</small>
+                        </label>
+                    </div>
+
+                    <div id="dropArea" class="drag-area">
+                        <i class="fa-solid fa-arrows-up-down-left-right"></i>
+                        <span>Drop your file here</span>
+                    </div>
+
+                    <div id="filePreview" class="file-preview" aria-live="polite"></div>
+
+                    <div class="progress-wrap">
+                        <div class="progress-label">
+                            <span>Upload progress</span><strong id="progressText">0%</strong>
+                        </div>
+                        <progress id="uploadProgress" max="100" value="0">0%</progress>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> Upload Note
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="clearUploadForm()">
+                        <i class="fa-solid fa-rotate-left"></i> Clear
+                    </button>
+                    <button type="button" class="btn btn-ghost-danger" onclick="cancelUpload()">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <aside class="side-column">
+            <div class="info-card quality-card">
+                <div class="info-card-icon"><i class="fa-solid fa-medal"></i></div>
+                <span class="section-kicker">BEST PRACTICE</span>
+                <h3>Make your upload useful</h3>
+                <p>A clear title and accurate category help students discover the right material faster.</p>
+                <ul class="check-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Use a descriptive title</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Select the correct semester</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Keep the description short</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Prefer PDF when possible</li>
+                </ul>
+            </div>
+
+            <div class="info-card format-card">
+                <div class="format-card-top">
+                    <span class="section-kicker">SUPPORTED FILES</span>
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+                <div class="format-list">
+                    <span><i class="fa-solid fa-file-pdf"></i> PDF</span>
+                    <span><i class="fa-solid fa-file-word"></i> DOC / DOCX</span>
+                    <span><i class="fa-solid fa-file-powerpoint"></i> PPT / PPTX</span>
+                </div>
+                <div class="size-note"><i class="fa-solid fa-shield-halved"></i> Maximum file size: <strong>20 MB</strong></div>
+            </div>
+        </aside>
+    </section>
+
+    <section class="recent-section">
+        <div class="section-heading-row">
+            <div>
+                <span class="section-kicker">YOUR ACTIVITY</span>
+                <h2>Recent uploads</h2>
+                <p>Keep track of the resources you have shared.</p>
+            </div>
+            <a href="notes.html" class="text-link">Browse all notes <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="table-card">
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Note</th>
+                            <th>Subject</th>
+                            <th>Department</th>
+                            <th>Semester</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentUploads">
+                        <tr>
+                            <td colspan="5">
+                                <div class="empty-state">
+                                    <span><i class="fa-solid fa-inbox"></i></span>
+                                    <strong>No uploads available</strong>
+                                    <p>Your uploaded notes will appear here.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="tips-section">
+        <div class="section-heading-row">
+            <div>
+                <span class="section-kicker">QUICK TIPS</span>
+                <h2>Upload better resources</h2>
+            </div>
+        </div>
+
+        <div class="tips-grid">
+            <article class="tip-card">
+                <span class="tip-icon blue"><i class="fa-solid fa-file-pdf"></i></span>
+                <div><h3>PDF preferred</h3><p>PDF files preserve formatting across different devices.</p></div>
+            </article>
+            <article class="tip-card">
+                <span class="tip-icon purple"><i class="fa-solid fa-tags"></i></span>
+                <div><h3>Use clear titles</h3><p>Descriptive titles make notes easier to search and identify.</p></div>
+            </article>
+            <article class="tip-card">
+                <span class="tip-icon green"><i class="fa-solid fa-folder-tree"></i></span>
+                <div><h3>Stay organized</h3><p>Correct subjects, departments, and semesters keep the library useful.</p></div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="page-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="footer-logo"><i class="fa-solid fa-book-open"></i></div>
+                <div><strong>StudyHub</strong><span>Learn. Share. Grow.</span></div>
+            </div>
+            <div class="footer-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="notes.html">Browse Notes</a>
+                <a href="profile.html">Profile</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 StudyHub. All Rights Reserved.</span>
+            <span>Built for students and teachers.</span>
+        </div>
+    </footer>
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/upload.js"></script>
+</body>
+</html>

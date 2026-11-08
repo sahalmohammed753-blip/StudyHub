@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHub | Notes Library</title>
+
+    <link rel="stylesheet" href="css/notes.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<aside class="sidebar">
+    <div class="sidebar-brand">
+        <a href="dashboard.html" class="brand-link">
+            <span class="brand-icon"><i class="fa-solid fa-book-open"></i></span>
+            <span class="brand-name">StudyHub</span>
+        </a>
+    </div>
+
+    <nav class="sidebar-nav">
+        <div class="nav-group">
+            <span class="nav-label">Workspace</span>
+
+            <a href="dashboard.html" class="nav-link">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="upload.html" class="nav-link">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>Upload Notes</span>
+            </a>
+
+            <a href="notes.html" class="nav-link active">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Notes Library</span>
+            </a>
+
+            <a href="profile.html" class="nav-link">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="contact.html" class="nav-link">
+                <i class="fa-solid fa-headset"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="sidebar-help">
+            <div class="help-icon"><i class="fa-solid fa-circle-question"></i></div>
+            <div>
+                <strong>Need help?</strong>
+                <span>Visit Support</span>
+            </div>
+        </div>
+
+        <a href="#" class="nav-link logout-link" onclick="logoutUser(); return false;">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+</aside>
+
+<main class="dashboard">
+
+    <header class="topbar">
+        <div class="topbar-left">
+            <span class="eyebrow">STUDY RESOURCE CENTER</span>
+            <h1>Notes Library</h1>
+            <p>Discover, filter and save study materials shared by the StudyHub community.</p>
+        </div>
+
+        <div class="topbar-right">
+            <a href="upload.html" class="topbar-action">
+                <i class="fa-solid fa-plus"></i>
+                Upload
+            </a>
+
+            <div class="user-chip">
+                <img src="assets/images/avatar.png" alt="Profile" class="user-avatar">
+                <div class="user-info">
+                    <strong id="username">Student</strong>
+                    <span>StudyHub Member</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-card">
+        <div class="hero-content">
+            <span class="hero-badge">
+                <i class="fa-solid fa-layer-group"></i>
+                Digital Notes Library
+            </span>
+
+            <h2>Everything you need to study, in one place.</h2>
+
+            <p>
+                Search your subjects, narrow results by department and semester,
+                bookmark important resources and download the notes you need.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#library" class="btn btn-primary">
+                    <i class="fa-solid fa-book-open"></i>
+                    Explore Notes
+                </a>
+                <a href="upload.html" class="btn btn-light">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    Share a Note
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-orb orb-one"></div>
+            <div class="hero-orb orb-two"></div>
+            <div class="hero-book">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Study<br>Smart</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-grid">
+        <article class="stat-card">
+            <div class="stat-icon blue"><i class="fa-solid fa-book"></i></div>
+            <div>
+                <strong id="libraryNotes">0</strong>
+                <span>Total Notes</span>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon purple"><i class="fa-solid fa-download"></i></div>
+            <div>
+                <strong id="libraryDownloads">0</strong>
+                <span>Your Downloads</span>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon amber"><i class="fa-solid fa-bookmark"></i></div>
+            <div>
+                <strong id="libraryBookmarks">0</strong>
+                <span>Bookmarked</span>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon green"><i class="fa-solid fa-users"></i></div>
+            <div>
+                <strong id="libraryContributors">0</strong>
+                <span>Contributors</span>
+            </div>
+        </article>
+    </section>
+
+    <section class="dashboard-section search-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">FIND RESOURCES</span>
+                <h2>Search the library</h2>
+                <p>Use keywords or filters to find exactly what you need.</p>
+            </div>
+        </div>
+
+        <div class="search-panel">
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="searchInput" type="text"
+                       placeholder="Search by title, subject, department or description..."
+                       autocomplete="off">
+            </div>
+
+            <select id="departmentFilter" aria-label="Department">
+                <option value="">All Departments</option>
+                <option>CSE</option>
+                <option>ISE</option>
+                <option>AIML</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>Mechanical</option>
+                <option>Civil</option>
+            </select>
+
+            <select id="semesterFilter" aria-label="Semester">
+                <option value="">All Semesters</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>
+
+            <select id="sortFilter" aria-label="Sort notes">
+                <option value="latest">Latest Uploads</option>
+                <option value="downloads">Most Downloaded</option>
+                <option value="title">A - Z</option>
+            </select>
+
+            <button type="button" id="clearFilters" class="btn btn-outline">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset
+            </button>
+        </div>
+
+        <div class="filter-status">
+            <span><i class="fa-solid fa-filter"></i> <strong id="resultCount">0</strong> resources found</span>
+            <button type="button" id="refreshNotes" class="refresh-btn">
+                <i class="fa-solid fa-arrows-rotate"></i> Refresh
+            </button>
+        </div>
+    </section>
+
+    <section class="dashboard-section" id="library">
+        <div class="section-heading-row">
+            <div>
+                <span class="section-kicker">THE LIBRARY</span>
+                <h2>Available Notes</h2>
+                <p>Browse resources uploaded by students and teachers.</p>
+            </div>
+            <a href="upload.html" class="text-link">
+                Upload new <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div id="notesContainer" class="notes-grid"></div>
+    </section>
+
+    <section class="dashboard-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">QUICK DISCOVERY</span>
+                <h2>Explore by category</h2>
+                <p>Jump into popular study areas.</p>
+            </div>
+        </div>
+
+        <div class="category-grid">
+            <button class="category-card category-blue" data-category="Programming">
+                <span><i class="fa-solid fa-code"></i></span>
+                <strong>Programming</strong>
+                <small>Java, C, Python & more</small>
+            </button>
+
+            <button class="category-card category-purple" data-category="DBMS">
+                <span><i class="fa-solid fa-database"></i></span>
+                <strong>Database</strong>
+                <small>DBMS & data systems</small>
+            </button>
+
+            <button class="category-card category-green" data-category="AI">
+                <span><i class="fa-solid fa-brain"></i></span>
+                <strong>Artificial Intelligence</strong>
+                <small>AI & machine learning</small>
+            </button>
+
+            <button class="category-card category-orange" data-category="Web">
+                <span><i class="fa-solid fa-globe"></i></span>
+                <strong>Web Development</strong>
+                <small>HTML, CSS & JavaScript</small>
+            </button>
+        </div>
+    </section>
+
+    <section class="dashboard-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">YOUR COLLECTION</span>
+                <h2>Bookmarked Notes</h2>
+                <p>Your saved resources are kept here for quick access.</p>
+            </div>
+        </div>
+
+        <div id="bookmarkContainer" class="notes-grid compact-grid"></div>
+    </section>
+
+    <section class="dashboard-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">ACTIVITY</span>
+                <h2>Recent Downloads</h2>
+                <p>A quick view of resources you have downloaded.</p>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Note</th>
+                            <th>Subject</th>
+                            <th>Department</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="downloadHistory"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-banner">
+        <div class="info-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <div>
+            <h3>Can't find the notes you need?</h3>
+            <p>Ask your classmates or teachers to upload the material to StudyHub.</p>
+        </div>
+        <a href="upload.html" class="btn btn-primary">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            Upload Notes
+        </a>
+    </section>
+
+    <footer class="dashboard-footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <h3><i class="fa-solid fa-book-open"></i> StudyHub</h3>
+                <p>Your collaborative learning platform for sharing and discovering study resources.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="upload.html">Upload Notes</a>
+                <a href="profile.html">Profile</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 StudyHub. All Rights Reserved.</span>
+            <span>Learn • Share • Grow</span>
+        </div>
+    </footer>
+
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/notes.js"></script>
+
+</body>
+</html>

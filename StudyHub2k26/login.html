@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyHub | Login</title>
+
+    <meta name="description"
+        content="Login to StudyHub and access notes uploaded by students and teachers.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- =========================
+            HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="container">
+
+            <nav class="navbar">
+
+                <div class="logo">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <span>StudyHub</span>
+
+                </div>
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#features">Features</a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#subjects">Subjects</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+                <div class="nav-buttons">
+
+                    <a href="signup.html" class="btn btn-outline">
+                        Register
+                    </a>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- =========================
+            LOGIN SECTION
+    ========================== -->
+
+    <section class="login-page">
+
+        <div class="container">
+
+            <div class="login-wrapper">
+
+                <!-- LEFT SIDE -->
+
+                <div class="login-info">
+
+                    <h1>Welcome Back</h1>
+
+                    <p>
+
+                        Login to your StudyHub account to access
+                        lecture notes, assignments, question papers,
+                        presentations and study resources from
+                        anywhere.
+
+                    </p>
+
+                    <div class="login-features">
+
+                        <div class="feature-item">
+
+                            <i class="fa-solid fa-book"></i>
+
+                            <span>Unlimited Notes</span>
+
+                        </div>
+
+                        <div class="feature-item">
+
+                            <i class="fa-solid fa-download"></i>
+
+                            <span>Easy Downloads</span>
+
+                        </div>
+
+                        <div class="feature-item">
+
+                            <i class="fa-solid fa-cloud"></i>
+
+                            <span>Cloud Storage</span>
+
+                        </div>
+
+                        <div class="feature-item">
+
+                            <i class="fa-solid fa-user-graduate"></i>
+
+                            <span>Student & Teacher Portal</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- LOGIN CARD -->
+
+                <div class="login-card">
+
+                    <h2>Login</h2>
+
+                    <p>
+
+                        Sign in to continue to your dashboard.
+
+                    </p>
+
+                    <form onsubmit="loginUser(event)">
+
+                        <!-- Email -->
+
+                        <div class="input-group">
+
+                            <label>Email Address</label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="Enter your email"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Password -->
+
+                        <div class="input-group">
+
+                            <label>Password</label>
+
+                            <div class="input-box">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    placeholder="Enter your password"
+                                    required>
+
+                                <i
+                                    class="fa-solid fa-eye toggle-password"
+                                    onclick="togglePassword('password', this)">
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Remember -->
+
+                        <div class="login-options">
+
+                            <label>
+
+                                <input type="checkbox">
+
+                                Remember Me
+
+                            </label>
+
+                            <a href="#">
+
+                                Forgot Password?
+
+                            </a>
+
+                        </div>
+
+                        <!-- Login Button -->
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary login-btn">
+
+                            <i class="fa-solid fa-right-to-bracket"></i>
+
+                            Login
+
+                        </button>
+                                                <!-- Divider -->
+
+                        <div class="divider">
+
+                            <span>OR</span>
+
+                        </div>
+
+                        <!-- Social Login -->
+
+                        <div class="social-login">
+
+                            <button type="button" class="social-btn">
+
+                                <i class="fab fa-google"></i>
+
+                                Continue with Google
+
+                            </button>
+
+                            <button type="button" class="social-btn">
+
+                                <i class="fab fa-microsoft"></i>
+
+                                Continue with Microsoft
+
+                            </button>
+
+                        </div>
+
+                        <!-- Register Link -->
+
+                        <div class="register-link">
+
+                            <p>
+
+                                Don't have an account?
+
+                                <a href="signup.html">
+
+                                    Register Now
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+            FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-section">
+
+                    <h3>
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                        StudyHub
+
+                    </h3>
+
+                    <p>
+
+                        StudyHub is a collaborative platform where
+                        students and teachers can upload, organize,
+                        and access study materials from anywhere.
+
+                    </p>
+
+                </div>
+
+                <div class="footer-section">
+
+                    <h4>Quick Links</h4>
+
+                    <ul>
+
+                        <li>
+
+                            <a href="index.html">
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="signup.html">
+
+                                Register
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="contact.html">
+
+                                Contact
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-section">
+
+                    <h4>Support</h4>
+
+                    <ul>
+
+                        <li>
+
+                            Email:
+                            support@studyhub.com
+
+                        </li>
+
+                        <li>
+
+                            Phone:
+                            +91 9745568705
+
+                        </li>
+
+                        <li>
+
+                            Open:
+                            24 × 7
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="footer-bottom">
+
+                <p>
+
+                    © 2026 StudyHub.
+
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- =========================
+            JAVASCRIPT
+    ========================== -->
+
+    <script src="js/storage.js"></script>
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

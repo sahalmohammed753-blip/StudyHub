@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Manage your StudyHub profile, uploaded notes, bookmarks and account settings."
+    >
+
+    <title>StudyHub | My Profile</title>
+
+    <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/profile.css">
+</head>
+
+
+<body>
+    <div class="dashboard">
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+
+<aside class="sidebar">
+
+    <div class="sidebar-brand">
+        <a href="dashboard.html" class="brand-link">
+            <div class="brand-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="brand-text">
+                <span class="brand-name">StudyHub</span>
+                <small>YOUR LEARNING SPACE</small>
+            </div>
+        </a>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <nav class="sidebar-nav">
+
+        <div class="nav-group">
+            <span class="nav-label">WORKSPACE</span>
+
+            <a href="dashboard.html" class="nav-link">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+                <i class="fa-solid fa-chevron-right nav-arrow"></i>
+            </a>
+
+            <a href="notes.html" class="nav-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Notes Library</span>
+                <i class="fa-solid fa-chevron-right nav-arrow"></i>
+            </a>
+
+            <a href="upload.html" class="nav-link">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>Upload Notes</span>
+                <i class="fa-solid fa-chevron-right nav-arrow"></i>
+            </a>
+        </div>
+
+        <div class="nav-group">
+            <span class="nav-label">PERSONAL</span>
+
+            <a href="profile.html" class="nav-link active">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+                <i class="fa-solid fa-chevron-right nav-arrow"></i>
+            </a>
+
+            <a href="contact.html" class="nav-link">
+                <i class="fa-solid fa-headset"></i>
+                <span>Contact & Support</span>
+                <i class="fa-solid fa-chevron-right nav-arrow"></i>
+            </a>
+        </div>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <div class="sidebar-help">
+            <div class="help-icon">
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+
+            <div class="help-text">
+                <strong>Need assistance?</strong>
+                <p>We're here to help you.</p>
+            </div>
+
+            <a href="contact.html" aria-label="Get help">
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <a href="#"
+           class="sidebar-logout"
+           onclick="logoutUser(); return false;">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Sign Out</span>
+        </a>
+
+        <div class="sidebar-version">
+            STUDYHUB · 2026
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN DASHBOARD AREA
+========================================================= -->
+
+<main class="dashboard-main">
+
+
+    <!-- =====================================================
+         TOPBAR
+    ===================================================== -->
+
+   
+<header class="topbar">
+
+    <div class="topbar-left">
+
+        <div class="mobile-brand">
+            <i class="fa-solid fa-book-open"></i>
+            <span>StudyHub</span>
+        </div>
+
+        <div class="page-heading">
+            <div class="breadcrumb">
+                <span>Workspace</span>
+                <i class="fa-solid fa-chevron-right"></i>
+                <strong>My Profile</strong>
+            </div>
+
+            <h1>My Profile</h1>
+
+            <p>Manage your personal information and account.</p>
+        </div>
+
+    </div>
+
+    <div class="topbar-right">
+
+        <div class="topbar-welcome">
+            <span>Welcome back,</span>
+            <strong id="username">Student</strong>
+        </div>
+
+        <a href="profile.html" class="user-chip">
+
+            <div class="user-avatar">
+                <img
+                    src="assets/images/avatar.png"
+                    id="profileAvatar"
+                    alt="Profile picture">
+            </div>
+
+            <div class="user-info">
+                <strong>My Account</strong>
+                <span>StudyHub Member</span>
+            </div>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+    <!-- =====================================================
+         PROFILE CONTENT
+    ===================================================== -->
+
+    <div class="profile-content">
+
+
+        <!-- =================================================
+             PROFILE HERO
+        ================================================= -->
+
+        <section class="profile-hero">
+
+
+            <div class="profile-cover">
+
+                <div class="cover-pattern"></div>
+
+            </div>
+
+
+            <div class="profile-hero-content">
+
+
+                <!-- Avatar -->
+
+                <div class="profile-avatar-wrapper">
+
+                    <img
+                        src="assets/images/avatar.png"
+                        id="profileImage"
+                        class="profile-main-avatar"
+                        alt="Profile picture"
+                    >
+
+                    <button
+                        type="button"
+                        class="avatar-camera"
+                        id="changePhotoBtn"
+                        title="Change profile photo"
+                    >
+
+                        <i class="fa-solid fa-camera"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- Profile Details -->
+
+                <div class="profile-hero-info">
+
+                    <div class="profile-name-row">
+
+                        <h2 id="displayName">
+                            Student Name
+                        </h2>
+
+                        <span class="profile-status">
+                            <i class="fa-solid fa-circle"></i>
+                            Active
+                        </span>
+
+                    </div>
+
+                    <p class="profile-role" id="displayRole">
+                        Student
+                    </p>
+
+                    <p class="profile-college">
+
+                        <i class="fa-solid fa-building-columns"></i>
+
+                        <span id="displayCollege">
+                            College Name
+                        </span>
+
+                    </p>
+
+                    <p class="profile-department">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+
+                        <span id="displayDepartment">
+                            Computer Science
+                        </span>
+
+                    </p>
+
+                </div>
+
+
+                <!-- Profile Actions -->
+
+                <div class="profile-hero-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        onclick="document.getElementById('fullName').focus()"
+                    >
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        Edit Profile
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ACCOUNT STATISTICS
+        ================================================= -->
+
+        <section class="profile-stats">
+
+
+            <div class="profile-stat-card blue">
+
+                <div class="profile-stat-icon">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Uploaded Notes
+                    </span>
+
+                    <strong id="notesCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-stat-card green">
+
+                <div class="profile-stat-icon">
+
+                    <i class="fa-solid fa-download"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Downloads
+                    </span>
+
+                    <strong id="downloadsCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-stat-card purple">
+
+                <div class="profile-stat-icon">
+
+                    <i class="fa-solid fa-bookmark"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Bookmarks
+                    </span>
+
+                    <strong id="bookmarkCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-stat-card orange">
+
+                <div class="profile-stat-icon">
+
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Ratings
+                    </span>
+
+                    <strong id="ratingCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROFILE INFORMATION + EDIT
+        ================================================= -->
+
+        <section class="profile-layout">
+
+
+            <!-- Personal Information -->
+
+            <div class="profile-panel profile-info-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            PERSONAL
+                        </span>
+
+                        <h2>
+                            Profile Information
+                        </h2>
+
+                    </div>
+
+                    <div class="panel-icon">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-list">
+
+
+                    <div class="info-item">
+
+                        <div class="info-item-icon">
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Full Name
+                            </span>
+
+                            <strong id="infoName">
+                                Student Name
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-item-icon">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Email
+                            </span>
+
+                            <strong id="infoEmail">
+                                student@example.com
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-item-icon">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Phone
+                            </span>
+
+                            <strong id="infoPhone">
+                                Not provided
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-item-icon">
+
+                            <i class="fa-solid fa-building-columns"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                College
+                            </span>
+
+                            <strong id="infoCollege">
+                                College Name
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-item-icon">
+
+                            <i class="fa-solid fa-code"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Department
+                            </span>
+
+                            <strong id="infoDepartment">
+                                CSE
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-item-icon">
+
+                            <i class="fa-solid fa-layer-group"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Semester
+                            </span>
+
+                            <strong id="infoSemester">
+                                1
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Edit Profile -->
+
+            <div class="profile-panel profile-edit-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            SETTINGS
+                        </span>
+
+                        <h2>
+                            Edit Profile
+                        </h2>
+
+                    </div>
+
+                    <div class="panel-icon">
+
+                        <i class="fa-solid fa-pen-to-square"></i>
+
+                    </div>
+
+                </div>
+
+
+                <form id="profileForm">
+
+
+                    <div class="profile-form-grid">
+
+
+                        <div class="input-group">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <div class="profile-input">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    placeholder="Enter your full name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <div class="profile-input disabled">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="Email"
+                                    readonly
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <div class="profile-input">
+
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder="Enter phone number"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="college">
+                                College
+                            </label>
+
+                            <div class="profile-input">
+
+                                <i class="fa-solid fa-building-columns"></i>
+
+                                <input
+                                    type="text"
+                                    id="college"
+                                    placeholder="Enter college name"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="department">
+                                Department
+                            </label>
+
+                            <div class="profile-input">
+
+                                <i class="fa-solid fa-code"></i>
+
+                                <select id="department">
+
+                                    <option value="CSE">
+                                        CSE
+                                    </option>
+
+                                    <option value="ISE">
+                                        ISE
+                                    </option>
+
+                                    <option value="AIML">
+                                        AIML
+                                    </option>
+
+                                    <option value="ECE">
+                                        ECE
+                                    </option>
+
+                                    <option value="EEE">
+                                        EEE
+                                    </option>
+
+                                    <option value="Mechanical">
+                                        Mechanical
+                                    </option>
+
+                                    <option value="Civil">
+                                        Civil
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="semester">
+                                Semester
+                            </label>
+
+                            <div class="profile-input">
+
+                                <i class="fa-solid fa-layer-group"></i>
+
+                                <select id="semester">
+
+                                    <option value="1">Semester 1</option>
+                                    <option value="2">Semester 2</option>
+                                    <option value="3">Semester 3</option>
+                                    <option value="4">Semester 4</option>
+                                    <option value="5">Semester 5</option>
+                                    <option value="6">Semester 6</option>
+                                    <option value="7">Semester 7</option>
+                                    <option value="8">Semester 8</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="profile-form-actions">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+
+                            <i class="fa-solid fa-floppy-disk"></i>
+
+                            Save Changes
+
+                        </button>
+
+
+                        <button
+                            type="reset"
+                            class="btn btn-outline"
+                        >
+
+                            <i class="fa-solid fa-rotate-left"></i>
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             UPLOADED NOTES
+        ================================================= -->
+
+        <section class="profile-panel full-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        CONTRIBUTIONS
+                    </span>
+
+                    <h2>
+                        My Uploaded Notes
+                    </h2>
+
+                    <p>
+                        Notes you have shared with the StudyHub community.
+                    </p>
+
+                </div>
+
+                <a
+                    href="upload.html"
+                    class="btn btn-primary"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Upload Note
+
+                </a>
+
+            </div>
+
+
+            <div class="table-container profile-table">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Title
+                            </th>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Department
+                            </th>
+
+                            <th>
+                                Downloads
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="uploadedNotes">
+
+                        <tr>
+
+                            <td colspan="5">
+
+                                <div class="table-empty">
+
+                                    <i class="fa-solid fa-file-circle-question"></i>
+
+                                    <span>
+                                        No uploaded notes found.
+                                    </span>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BOOKMARKS
+        ================================================= -->
+
+        <section class="profile-panel full-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        SAVED
+                    </span>
+
+                    <h2>
+                        Bookmarked Notes
+                    </h2>
+
+                    <p>
+                        Your saved notes for quick access later.
+                    </p>
+
+                </div>
+
+                <a
+                    href="notes.html"
+                    class="panel-link"
+                >
+
+                    View Library
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <div
+                id="bookmarkList"
+                class="profile-notes-grid"
+            >
+
+                <div class="profile-empty-state">
+
+                    <div class="empty-icon">
+
+                        <i class="fa-solid fa-bookmark"></i>
+
+                    </div>
+
+                    <h3>
+                        No Bookmarks Yet
+                    </h3>
+
+                    <p>
+                        Save useful notes from the library and they will appear here.
+                    </p>
+
+                    <a
+                        href="notes.html"
+                        class="btn btn-outline"
+                    >
+
+                        Browse Notes
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DOWNLOAD HISTORY
+        ================================================= -->
+
+        <section class="profile-panel full-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        ACTIVITY
+                    </span>
+
+                    <h2>
+                        Download History
+                    </h2>
+
+                    <p>
+                        Recently downloaded study resources.
+                    </p>
+
+                </div>
+
+                <div class="panel-icon">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container profile-table">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Note
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="downloadHistory">
+
+                        <tr>
+
+                            <td colspan="3">
+
+                                <div class="table-empty">
+
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                                    <span>
+                                        No download history available.
+                                    </span>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ACCOUNT SETTINGS
+        ================================================= -->
+
+        <section class="profile-panel full-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        ACCOUNT
+                    </span>
+
+                    <h2>
+                        Account Settings
+                    </h2>
+
+                    <p>
+                        Manage your StudyHub account preferences.
+                    </p>
+
+                </div>
+
+                <div class="panel-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-grid">
+
+
+                <!-- Password -->
+
+                <div class="setting-card">
+
+                    <div class="setting-icon blue">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                    </div>
+
+                    <h3>
+                        Change Password
+                    </h3>
+
+                    <p>
+                        Update your account password to keep your account secure.
+                    </p>
+
+                    <button
+                        class="btn btn-outline"
+                        onclick="changePassword()"
+                    >
+
+                        Change Password
+
+                    </button>
+
+                </div>
+
+
+                <!-- Dark Mode -->
+
+                <div class="setting-card">
+
+                    <div class="setting-icon purple">
+
+                        <i class="fa-solid fa-moon"></i>
+
+                    </div>
+
+                    <h3>
+                        Appearance
+                    </h3>
+
+                    <p>
+                        Switch between light and dark themes.
+                    </p>
+
+                    <button
+                        class="btn btn-outline"
+                        onclick="toggleDarkMode()"
+                    >
+
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+
+                        Toggle Theme
+
+                    </button>
+
+                </div>
+
+
+                <!-- Delete -->
+
+                <div class="setting-card danger-card">
+
+                    <div class="setting-icon red">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                    </div>
+
+                    <h3>
+                        Delete Account
+                    </h3>
+
+                    <p>
+                        Permanently remove your StudyHub account and data.
+                    </p>
+
+                    <button
+                        class="btn btn-danger"
+                        onclick="deleteAccount()"
+                    >
+
+                        Delete Account
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+
+                <div class="footer-section">
+
+                    <h3>
+
+                        <i class="fa-solid fa-book-open"></i>
+
+                        StudyHub
+
+                    </h3>
+
+                    <p>
+
+                        Empowering students and teachers by providing
+                        a collaborative platform for sharing educational
+                        resources.
+
+                    </p>
+
+                </div>
+
+
+                <div class="footer-section">
+
+                    <h4>
+                        Quick Links
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="dashboard.html">
+                                Dashboard
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="upload.html">
+                                Upload Notes
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="notes.html">
+                                Notes Library
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="footer-section">
+
+                    <h4>
+                        Support
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            support@studyhub.com
+                        </li>
+
+                        <li>
+                            +91 9876543210
+                        </li>
+
+                        <li>
+                            Bangalore, India
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 StudyHub. All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+</div>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/storage.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/profile.js"></script>
+
+<script src="js/darkmode.js"></script>
+
+
+</body>
+
+</html>

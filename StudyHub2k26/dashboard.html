@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudyHub student learning dashboard">
+    <title>StudyHub | Dashboard</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Dashboard-only stylesheet -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<!-- ==========================================================
+     SIDEBAR
+========================================================== -->
+<aside class="sidebar">
+
+    <div class="sidebar-brand">
+        <a href="dashboard.html" class="brand-link">
+            <span class="brand-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </span>
+            <span class="brand-name">StudyHub</span>
+        </a>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Main navigation">
+
+        <div class="nav-group">
+            <span class="nav-label">MAIN</span>
+
+            <a href="dashboard.html" class="nav-link active">
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="notes.html" class="nav-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Notes Library</span>
+            </a>
+
+            <a href="upload.html" class="nav-link">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>Upload Notes</span>
+            </a>
+        </div>
+
+        <div class="nav-group">
+            <span class="nav-label">ACCOUNT</span>
+
+            <a href="profile.html" class="nav-link">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="contact.html" class="nav-link">
+                <i class="fa-solid fa-headset"></i>
+                <span>Contact & Support</span>
+            </a>
+        </div>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="sidebar-help">
+            <div class="help-icon">
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <div>
+                <strong>Need help?</strong>
+                <span>We're here for you.</span>
+            </div>
+        </div>
+
+        <a href="index.html" class="logout-link">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+
+</aside>
+
+
+<!-- ==========================================================
+     MAIN AREA
+========================================================== -->
+<main class="dashboard">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+        <div class="topbar-left">
+            <div class="mobile-brand">
+                <i class="fa-solid fa-book-open"></i>
+                <span>StudyHub</span>
+            </div>
+
+            <div class="page-heading">
+                <span class="eyebrow">STUDENT DASHBOARD</span>
+                <h1>Good to see you, <span id="welcomeUser">Student</span> 👋</h1>
+                <p>Everything you need to learn, share and stay organised.</p>
+            </div>
+        </div>
+
+        <div class="topbar-right">      
+
+            <a href="notes.html" class="topbar-action" title="Browse notes" aria-label="Browse notes">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+
+            <a href="profile.html" class="user-chip">
+                <span class="user-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </span>
+                <span class="user-info">
+                    <strong id="username">Student</strong>
+                    <small>StudyHub Member</small>
+                </span>
+                <i class="fa-solid fa-chevron-down user-chevron"></i>
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ======================================================
+         HERO
+    ======================================================= -->
+    <section class="hero-card">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                <i class="fa-solid fa-sparkles"></i>
+                Your learning space
+            </span>
+
+            <h2>
+                Learn smarter.<br>
+                Share faster.
+            </h2>
+
+            <p>
+                Discover useful study materials, upload your own notes
+                and keep everything you need for college in one place.
+            </p>
+
+            <div class="hero-actions">
+                <a href="upload.html" class="btn btn-light">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    Upload Notes
+                </a>
+
+                <a href="notes.html" class="btn btn-ghost">
+                    <i class="fa-solid fa-book-open"></i>
+                    Browse Library
+                </a>
+            </div>
+
+            <div class="hero-meta">
+                <span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Student friendly
+                </span>
+                <span>
+                    <i class="fa-solid fa-bolt"></i>
+                    Quick access
+                </span>
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="hero-orb orb-one"></div>
+            <div class="hero-orb orb-two"></div>
+
+            <div class="hero-stat-card card-main">
+                <span class="mini-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </span>
+                <strong>1,250+</strong>
+                <small>Study resources</small>
+            </div>
+
+            <div class="hero-stat-card card-small card-students">
+                <span class="mini-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+                <strong>540+</strong>
+                <small>Students</small>
+            </div>
+
+            <div class="hero-stat-card card-small card-downloads">
+                <span class="mini-icon">
+                    <i class="fa-solid fa-download"></i>
+                </span>
+                <strong>18K+</strong>
+                <small>Downloads</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         STATISTICS
+    ======================================================= -->
+    <section class="stats-grid" aria-label="StudyHub statistics">
+
+        <article class="stat-card">
+            <div class="stat-icon blue">
+                <i class="fa-solid fa-book"></i>
+            </div>
+            <div class="stat-copy">
+                <span>Total Notes</span>
+                <strong id="totalNotes">1240</strong>
+                <small><i class="fa-solid fa-arrow-up"></i> Resources available</small>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon green">
+                <i class="fa-solid fa-download"></i>
+            </div>
+            <div class="stat-copy">
+                <span>Total Downloads</span>
+                <strong id="totalDownloads">18234</strong>
+                <small><i class="fa-solid fa-arrow-up"></i> Growing every day</small>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon purple">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="stat-copy">
+                <span>Students</span>
+                <strong id="totalUsers">542</strong>
+                <small><i class="fa-solid fa-user-plus"></i> Active learners</small>
+            </div>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon orange">
+                <i class="fa-solid fa-bookmark"></i>
+            </div>
+            <div class="stat-copy">
+                <span>Bookmarks</span>
+                <strong id="totalBookmarks">0</strong>
+                <small><i class="fa-solid fa-bookmark"></i> Saved for later</small>
+            </div>
+        </article>
+
+    </section>
+
+
+    <!-- ======================================================
+         SEARCH
+    ======================================================= -->
+    <section class="dashboard-section search-panel">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">DISCOVER</span>
+                <h2>Find your study materials</h2>
+                <p>Search notes by keyword and narrow your results with filters.</p>
+            </div>
+        </div>
+
+        <div class="search-form">
+
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="searchInput"
+                       type="search"
+                       placeholder="Search notes, subjects or topics..."
+                       autocomplete="off">
+            </div>
+
+            <select id="departmentFilter" onchange="filterDepartment(this)">
+                <option value="">All Departments</option>
+                <option value="BCA">BCA</option>
+                <option value="BSc">BSc</option>
+                <option value="BCom">BCom</option>
+                <option value="BBA">BBA</option>
+            </select>
+
+            <select id="semesterFilter" onchange="filterSemester(this)">
+                <option value="">All Semesters</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+            </select>
+
+            <a href="notes.html" class="btn btn-primary">
+                <i class="fa-solid fa-arrow-right"></i>
+                Browse
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         FEATURED SUBJECTS
+    ======================================================= -->
+    <section class="dashboard-section">
+
+        <div class="section-heading section-heading-row">
+            <div>
+                <span class="section-kicker">EXPLORE</span>
+                <h2>Featured subjects</h2>
+                <p>Start with a popular learning category.</p>
+            </div>
+
+            <a href="notes.html" class="text-link">
+                View all
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="subjects-grid">
+
+            <article class="subject-card">
+                <div class="subject-top">
+                    <div class="subject-icon blue">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <span class="subject-count">120+ notes</span>
+                </div>
+                <h3>Artificial Intelligence</h3>
+                <p>Machine Learning, neural networks, deep learning and AI concepts.</p>
+                <a href="notes.html">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="subject-card">
+                <div class="subject-top">
+                    <div class="subject-icon green">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <span class="subject-count">180+ notes</span>
+                </div>
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript, frontend frameworks and backend basics.</p>
+                <a href="notes.html">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="subject-card">
+                <div class="subject-top">
+                    <div class="subject-icon purple">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <span class="subject-count">95+ notes</span>
+                </div>
+                <h3>Robotic Automation</h3>
+                <p>RPA, UiPath, automation workflows and intelligent systems.</p>
+                <a href="notes.html">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="subject-card">
+                <div class="subject-top">
+                    <div class="subject-icon orange">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <span class="subject-count">110+ notes</span>
+                </div>
+                <h3>Cloud Computing</h3>
+                <p>AWS, Azure, cloud services, deployment and DevOps fundamentals.</p>
+                <a href="notes.html">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="subject-card">
+                <div class="subject-top">
+                    <div class="subject-icon red">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <span class="subject-count">85+ notes</span>
+                </div>
+                <h3>Cyber Security</h3>
+                <p>Network security, ethical hacking, cryptography and safety.</p>
+                <a href="notes.html">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="subject-card">
+                <div class="subject-top">
+                    <div class="subject-icon cyan">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <span class="subject-count">130+ notes</span>
+                </div>
+                <h3>Database Systems</h3>
+                <p>SQL, MySQL, MongoDB, database design and data management.</p>
+                <a href="notes.html">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         LATEST NOTES
+    ======================================================= -->
+    <section class="dashboard-section">
+
+        <div class="section-heading section-heading-row">
+            <div>
+                <span class="section-kicker">RECENTLY ADDED</span>
+                <h2>Latest notes</h2>
+                <p>Fresh study resources from the StudyHub library.</p>
+            </div>
+
+            <a href="notes.html" class="text-link">
+                View library
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <!-- JS can populate this container with stored notes -->
+        <div class="notes-grid" id="notesContainer">
+
+            <article class="note-card">
+                <div class="note-card-top">
+                    <span class="note-tag">Semester 4</span>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+                <h3>Data Structures</h3>
+                <p>Complete notes covering arrays, linked lists, stacks, queues and trees.</p>
+                <div class="note-meta">
+                    <span><i class="fa-solid fa-download"></i> 320 downloads</span>
+                    <a href="notes.html">View <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="note-card">
+                <div class="note-card-top">
+                    <span class="note-tag">Semester 5</span>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+                <h3>Operating Systems</h3>
+                <p>Process management, memory management, scheduling and file systems.</p>
+                <div class="note-meta">
+                    <span><i class="fa-solid fa-download"></i> 450 downloads</span>
+                    <a href="notes.html">View <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="note-card">
+                <div class="note-card-top">
+                    <span class="note-tag">Semester 6</span>
+                    <i class="fa-regular fa-bookmark"></i>
+                </div>
+                <h3>Python Programming</h3>
+                <p>Python fundamentals, OOP, file handling and practical project concepts.</p>
+                <div class="note-meta">
+                    <span><i class="fa-solid fa-download"></i> 710 downloads</span>
+                    <a href="notes.html">View <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         TWO COLUMN AREA
+    ======================================================= -->
+    <section class="dashboard-two-column">
+
+        <!-- QUICK ACTIONS -->
+        <div class="dashboard-section compact-section">
+
+            <div class="section-heading">
+                <span class="section-kicker">SHORTCUTS</span>
+                <h2>Quick actions</h2>
+                <p>Jump straight to what you need.</p>
+            </div>
+
+            <div class="quick-actions">
+
+                <a href="upload.html" class="quick-action">
+                    <span class="quick-icon blue">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </span>
+                    <span>
+                        <strong>Upload Notes</strong>
+                        <small>Share your study material</small>
+                    </span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="notes.html" class="quick-action">
+                    <span class="quick-icon green">
+                        <i class="fa-solid fa-book-open"></i>
+                    </span>
+                    <span>
+                        <strong>Browse Library</strong>
+                        <small>Find useful resources</small>
+                    </span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+                <a href="profile.html" class="quick-action">
+                    <span class="quick-icon purple">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </span>
+                    <span>
+                        <strong>My Profile</strong>
+                        <small>Manage your account</small>
+                    </span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIVITY -->
+        <div class="dashboard-section compact-section">
+
+            <div class="section-heading">
+                <span class="section-kicker">OVERVIEW</span>
+                <h2>StudyHub activity</h2>
+                <p>A quick look at your learning space.</p>
+            </div>
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+                    <span class="activity-icon blue">
+                        <i class="fa-solid fa-book"></i>
+                    </span>
+                    <div>
+                        <strong>Notes library</strong>
+                        <p>Explore resources shared by the community.</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-icon green">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </span>
+                    <div>
+                        <strong>Share knowledge</strong>
+                        <p>Upload useful notes for other learners.</p>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <span class="activity-icon purple">
+                        <i class="fa-solid fa-bookmark"></i>
+                    </span>
+                    <div>
+                        <strong>Save favourites</strong>
+                        <p>Keep important resources ready for revision.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         CONTRIBUTORS
+    ======================================================= -->
+    <section class="dashboard-section">
+
+        <div class="section-heading section-heading-row">
+            <div>
+                <span class="section-kicker">COMMUNITY</span>
+                <h2>Top contributors</h2>
+                <p>Students helping others learn through sharing.</p>
+            </div>
+        </div>
+
+        <div class="contributors-grid">
+
+            <article class="contributor-card">
+                <div class="contributor-avatar blue">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                    <h3>Rahul Sharma</h3>
+                    <p>42 uploads</p>
+                </div>
+                <span class="contributor-badge">Top contributor</span>
+            </article>
+
+            <article class="contributor-card">
+                <div class="contributor-avatar green">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                    <h3>Anjali Nair</h3>
+                    <p>38 uploads</p>
+                </div>
+                <span class="contributor-badge">Active</span>
+            </article>
+
+            <article class="contributor-card">
+                <div class="contributor-avatar purple">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                    <h3>Mohammed Sahal</h3>
+                    <p>35 uploads</p>
+                </div>
+                <span class="contributor-badge">Active</span>
+            </article>
+
+            <article class="contributor-card">
+                <div class="contributor-avatar orange">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div>
+                    <h3>Priya Das</h3>
+                    <p>31 uploads</p>
+                </div>
+                <span class="contributor-badge">Active</span>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         FOOTER
+    ======================================================= -->
+    <footer class="dashboard-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-book-open"></i>
+                    <strong>StudyHub</strong>
+                </a>
+                <p>
+                    A simple space for students and teachers to
+                    learn, share and grow together.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <strong>Explore</strong>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="notes.html">Notes Library</a>
+                <a href="upload.html">Upload Notes</a>
+            </div>
+
+            <div class="footer-links">
+                <strong>Account</strong>
+                <a href="profile.html">Profile</a>
+                <a href="contact.html">Support</a>
+                <a href="index.html">Logout</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 StudyHub. All Rights Reserved.</span>
+            <span>Made for students & teachers ❤️</span>
+        </div>
+
+    </footer>
+
+</main>
+
+
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/darkmode.js"></script>
+
+</body>
+</html>
